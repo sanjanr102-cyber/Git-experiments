@@ -1,0 +1,134 @@
+Got it, Sir! Based on your lab records and photos, here are all 5 Git Experiments fully detailed with their respective steps, commands, and code blocks from start to finish:
+Experiment 1: Setting Up and Basic Commands
+* Objective: Initialize a new Git repository in a directory, create a new file, add it to the staging area, and commit the changes with an appropriate commit message.
+* Procedure:
+# Step 1: Create a new directory and navigate into it
+mkdir E1
+cd E1
+
+# Step 2: Initialize the Git repository
+git init
+
+# Step 3: Create a new file and check status
+touch sample1.txt
+git status
+
+# Step 4: Add file to staging area
+git add sample1.txt
+git status
+
+# Step 5: Commit the change
+git commit -m "first time"
+
+# Step 6: View the commit history
+git log --oneline
+
+Experiment 2: Creating and Managing Branches
+* Objective: Write the commands to create a new branch, switch to it, make changes, and merge it.
+* Procedure:
+# Step 1: Check current branches
+git branch
+
+# Step 2: Create a new branch
+git branch feature-branch
+
+# Step 3: Switch to the new branch
+git checkout feature-branch
+
+# Step 4: Create a new file with content
+echo "New Feature" > feature.txt
+
+# Step 5: Check status and stage the file
+git status
+git add feature.txt
+
+# Step 6: Commit changes on the feature branch
+git commit -m "add new feature"
+
+# Step 7: Switch back to master branch
+git checkout master
+
+# Step 8: Merge feature branch into master
+git merge feature-branch
+
+# Step 9: Verify branches and commit graph
+git branch
+git log --oneline --graph --all
+
+Experiment 3: Stashing Changes
+* Objective: Write the commands to stash your changes, switch branches, and then apply the stashed changes.
+* Procedure:
+# Step 1: Check current repository status
+git status
+
+# Step 2: Stash the uncommitted changes
+git stash
+
+# Step 3: Switch to another branch
+git checkout feature-branch
+
+# Step 4: View available stashes
+git stash list
+
+# Step 5: Apply the stashed changes back
+git stash apply
+
+Experiment 4: Collaboration and Remote Repositories (Cloning)
+* Objective: Clone a remote Git repository to your local machine.
+* Procedure:
+# Step 1 & 2: Clone the remote repository using its URL
+git clone https://github.com/Babayaga0720/first-project.git
+
+# Step 3: Move into the cloned repository
+cd first-project
+
+# Step 4: Check repository status
+git status
+
+# Step 5: Check the remote repository configuration
+git remote -v
+
+Experiment 5: Fetching and Rebasing from Remote
+* Objective: Fetch the latest changes from a remote repository and rebase your local branch onto the updated remote branch.
+* Procedure:
+# Step 1: Create a folder and navigate into it
+mkdir E5
+cd E5
+
+# Step 2: Initialize Git
+git init
+
+# Step 3: Configure Git username and email
+git config --global user.name "Sanin Shabbir"
+git config --global user.email "saninshabbir20@gmail.com"
+
+# Step 4: Clone the GitHub repository
+git clone https://github.com/Babayaga0720/sample-project.git
+
+# Step 5: Enter the cloned repository
+cd sample-project
+
+# Step 6: Display files in the repository
+ls
+
+# Step 7: Check current branch
+git branch
+
+# (Step 8: On GitHub in your browser, create HelloWorld.java:)
+# public class HelloWorld {
+#     public static void main(String[] args) {
+#         System.out.println("Hello, World!");
+#     }
+# }
+
+# Step 9: Fetch latest changes from remote
+git fetch origin
+git branch -r
+
+# Step 10: Rebase local branch onto updated remote branch
+git rebase origin/main
+
+# Step 11: Verify files and status
+ls
+cat HelloWorld.java
+git status
